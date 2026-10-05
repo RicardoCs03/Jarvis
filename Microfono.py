@@ -5,7 +5,7 @@ import sounddevice as sd
 class Microfono():
     def __init__(self):
         self.id_dispositivo = None
-        self.frecuencia = 44100
+        self.frecuencia = 16000
         self.canales = 1
         self.grabacion_actual = None
 
@@ -32,7 +32,7 @@ class Microfono():
             print("Invalid index. Please select a valid microphone index.")
             return
 
-    def grabar(self, duration=5, fs=44100):
+    def grabar(self, duration=5, fs=16000):
         print(f"Recording for {duration} seconds...")
         recording = sd.rec(int(duration * fs), samplerate=fs, channels=self.canales)
         sd.wait()  # Wait until recording is finished
