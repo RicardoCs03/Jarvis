@@ -2,3 +2,5 @@
 venv
 .gitignorevoices/
 __pycache__/
+PULL_REQUEST.md
+
