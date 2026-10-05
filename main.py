@@ -1,5 +1,6 @@
 #Imports
 import Microfono as mic
+import Transcriptor as transcriptor
 #Class Definitions
 
 
@@ -19,6 +20,8 @@ if __name__ == "__main__":
     #task = input("What task would you like me to perform? ")
     #assistant.perform_task(task)
     microfono = mic.Microfono()
+    trans = transcriptor.Transcriptor()
     microfono.usuario_solicita_dispositivo()
+    trans.seleccionar_idioma()
     microfono.grabar(duration=5)
-    microfono.reproducir()
+    trans.transcribir(microfono.grabacion_actual)
